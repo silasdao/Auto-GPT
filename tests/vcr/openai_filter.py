@@ -34,10 +34,7 @@ def before_record_response(response):
 
 def before_record_request(request):
     filtered_request = filter_hostnames(request)
-    filtered_request_without_dynamic_data = replace_timestamp_in_request(
-        filtered_request
-    )
-    return filtered_request_without_dynamic_data
+    return replace_timestamp_in_request(filtered_request)
 
 
 def filter_hostnames(request):

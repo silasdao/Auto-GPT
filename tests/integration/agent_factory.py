@@ -50,7 +50,7 @@ def browser_agent(agent_test_config, memory_none: NoMemory, workspace: Workspace
 
     system_prompt = ai_config.construct_full_prompt()
 
-    agent = Agent(
+    return Agent(
         ai_name="",
         memory=memory_none,
         full_message_history=[],
@@ -61,8 +61,6 @@ def browser_agent(agent_test_config, memory_none: NoMemory, workspace: Workspace
         triggering_prompt=DEFAULT_TRIGGERING_PROMPT,
         workspace_directory=workspace.root,
     )
-
-    return agent
 
 
 @pytest.fixture
@@ -88,7 +86,7 @@ def writer_agent(agent_test_config, memory_none: NoMemory, workspace: Workspace)
     )
     system_prompt = ai_config.construct_full_prompt()
 
-    agent = Agent(
+    return Agent(
         ai_name="",
         memory=memory_none,
         full_message_history=[],
@@ -99,5 +97,3 @@ def writer_agent(agent_test_config, memory_none: NoMemory, workspace: Workspace)
         triggering_prompt=triggering_prompt,
         workspace_directory=workspace.root,
     )
-
-    return agent

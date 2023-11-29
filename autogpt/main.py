@@ -57,8 +57,7 @@ def run_auto_gpt(
     )
 
     if not cfg.skip_news:
-        motd = get_latest_bulletin()
-        if motd:
+        if motd := get_latest_bulletin():
             logger.typewriter_log("NEWS: ", Fore.GREEN, motd)
         git_branch = get_current_git_branch()
         if git_branch and git_branch != "stable":
